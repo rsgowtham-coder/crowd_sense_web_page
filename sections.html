@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrowdSense AI - Dashboard Sections</title>
     <link rel="stylesheet" href="sections.css">
-    <link rel="stylesheet" href="../Profile/Profile.css">
+    <link rel="stylesheet" href="Profile.css">
     <style>
         /* Popup toast for actions */
         .popup{
@@ -45,7 +45,7 @@
         </div>
 
         <div class="profile">
-            <a class="profile-btn" id="profileBtn" href="../Profile/ProfileDetails.html">
+            <a class="profile-btn" id="profileBtn" href="ProfileDetails.html">
                 <img src="https://i.pravatar.cc/50?img=12" alt="profile">
                 <div class="profile-text"><h4>Admin</h4><p>Administrator</p></div>
                 <i class="fa-solid fa-chevron-down"></i>
@@ -53,7 +53,7 @@
             <div class="profile-menu" id="profileMenu">
                 <div class="profile-header"><img src="https://i.pravatar.cc/100?img=12" alt="profile"><h3>Admin</h3><p>Administrator</p></div>
                 <hr>
-                <a class="menu-item" href="../Profile/ProfileDetails.html"><i class="fa-solid fa-user"></i>My Profile</a>
+                <a class="menu-item" href="ProfileDetails.html"><i class="fa-solid fa-user"></i>My Profile</a>
                 <button class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
             </div>
         </div>
@@ -170,7 +170,7 @@
 </div>
 
 <script src="sections.js"></script>
-<script src="../Profile/Profile.js"></script>
+<script src="Profile.js"></script>
 
 <script>
     (function(){
@@ -197,7 +197,7 @@
             logout.addEventListener('click', function(e){
                 e.preventDefault();
                 showPopup('Logging out...');
-                setTimeout(()=>{ localStorage.removeItem('crowdsenseLoggedIn'); window.location.href='../login/index.html.html'; },800);
+                setTimeout(()=>{ localStorage.removeItem('crowdsenseLoggedIn'); window.location.href='index.html'; },800);
             });
         }
     })();

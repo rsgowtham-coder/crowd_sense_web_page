@@ -11,7 +11,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="sidebar.css">
-    <link rel="stylesheet" href="../Profile/Profile.css">
+    <link rel="stylesheet" href="Profile.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
             </li>
 
             <li>
-                <a href="../sections/sections.html">
+                <a href="sections.html">
                     <i class="fa-solid fa-users"></i>
                     <span>Sections View</span>
                 </a>
@@ -116,7 +116,7 @@
 
                 <!-- Notification -->
 
-                <a href="../sections/sections.html" class="nav-btn" title="Sections View">
+                <a href="sections.html" class="nav-btn" title="Sections View">
                     <i class="fa-solid fa-table-cells-large"></i>
                 </a>
 
@@ -134,7 +134,7 @@
 
                 <div class="profile">
 
-                    <a class="profile-btn" id="profileBtn" href="../Profile/ProfileDetails.html">
+                    <a class="profile-btn" id="profileBtn" href="ProfileDetails.html">
                         <img src="https://i.pravatar.cc/50?img=12" alt="profile">
                         <div class="profile-text"><h4>Admin</h4><p>Administrator</p></div>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -147,7 +147,7 @@
                             <p>Administrator</p>
                         </div>
                         <hr>
-                        <a class="menu-item" href="../Profile/ProfileDetails.html"><i class="fa-solid fa-user"></i>My Profile</a>
+                        <a class="menu-item" href="ProfileDetails.html"><i class="fa-solid fa-user"></i>My Profile</a>
                         <button class="menu-item"><i class="fa-solid fa-gear"></i>Settings</button>
                         <hr>
                         <button class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
@@ -164,7 +164,7 @@
         <div class="content">
 
             <a href="dashboard.html" class="page-switcher">Open Main Dashboard</a>
-            <a href="../sections/sections.html" class="page-switcher">Open Sections View</a>
+            <a href="sections.html" class="page-switcher">Open Sections View</a>
             <h1>Welcome to CrowdSense AI</h1>
             <p>Real-time crowd monitoring dashboard.</p>
 
@@ -174,7 +174,7 @@
 
     <script>
         if (localStorage.getItem("crowdsenseLoggedIn") !== "true") {
-            window.location.replace("../login/index.html.html");
+            window.location.replace("index.html");
         }
 
         const logoutBtn = document.getElementById("logoutBtn");
@@ -183,7 +183,7 @@
             logoutBtn.addEventListener("click", (e) => {
                 e.preventDefault();
                 localStorage.removeItem("crowdsenseLoggedIn");
-                window.location.href = "../login/index.html.html";
+                window.location.href = "index.html";
             });
         }
     </script>

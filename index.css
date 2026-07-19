@@ -1,0 +1,821 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#0F172A;
+    color:#F8FAFC;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+}
+
+
+/* Animated Grid */
+
+.grid{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+}
+
+
+/* Glow Circles */
+
+.circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    animation:float 10s ease-in-out infinite;
+}
+
+.c1{
+
+    width:350px;
+    height:350px;
+
+    background:#2563EB;
+
+    top:-120px;
+    left:-100px;
+}
+
+.c2{
+
+    width:280px;
+    height:280px;
+
+    background:#06B6D4;
+
+    right:-80px;
+    top:120px;
+
+    animation-delay:2s;
+}
+
+.c3{
+
+    width:300px;
+    height:300px;
+
+    background:#1D4ED8;
+
+    bottom:-120px;
+    left:35%;
+
+    animation-delay:4s;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 60px;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+}
+
+
+.logo h1{
+
+    font-size:34px;
+
+    font-weight:700;
+}
+
+.logo span{
+
+    color:#06B6D4;
+}
+
+.logo p{
+
+    color:#94A3B8;
+
+    margin-top:5px;
+
+    font-size:14px;
+}
+
+
+/* ==========================
+   SYSTEM STATUS
+========================== */
+
+.system-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:rgba(255,255,255,.08);
+
+    padding:12px 18px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    font-size:14px;
+}
+
+.live-dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#22C55E;
+
+    animation:pulse 1.3s infinite;
+}
+
+
+/* ==========================
+   MAIN
+========================== */
+
+main{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:120px 8% 60px;
+
+    gap:60px;
+}
+
+
+/* ==========================
+   LEFT PANEL
+========================== */
+
+.left-panel{
+
+    width:50%;
+}
+
+.left-panel h2{
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+}
+
+.left-panel p{
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    margin-bottom:35px;
+}
+
+
+/* ==========================
+   FEATURES
+========================== */
+
+.features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    transition:.35s;
+}
+
+.feature:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#06B6D4;
+
+    box-shadow:0 0 30px rgba(6,182,212,.25);
+}
+
+.feature i{
+
+    font-size:22px;
+
+    color:#06B6D4;
+}
+
+.feature span{
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+
+/* ==========================
+   RIGHT PANEL
+========================== */
+
+.right-panel{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+
+/* ==========================
+   REMEMBER SECTION
+========================== */
+
+.remember{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    color:#CBD5E1;
+
+    font-size:14px;
+}
+
+.remember a{
+
+    color:#06B6D4;
+
+    text-decoration:none;
+}
+
+.remember a:hover{
+
+    text-decoration:underline;
+}
+
+
+/* ==========================
+   SECURE LOGIN
+========================== */
+
+.secure-login{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:25px;
+
+    margin-bottom:25px;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    position:absolute;
+
+    bottom:20px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#94A3B8;
+
+    font-size:13px;
+}
+
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 0 0 rgba(34,197,94,.7);
+
+    }
+
+    70%{
+
+        transform:scale(1.2);
+
+        box-shadow:0 0 0 12px rgba(34,197,94,0);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(35px);
+    }
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1000px){
+
+main{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.left-panel{
+
+    width:100%;
+}
+
+.right-panel{
+
+    width:100%;
+}
+
+.features{
+
+    grid-template-columns:1fr;
+}
+
+header{
+
+    padding:20px;
+}
+
+.logo h1{
+
+    font-size:28px;
+}
+
+.left-panel h2{
+
+    font-size:36px;
+}
+
+}
+
+/* =====================================
+   UIVERSE LOGIN FORM
+===================================== */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 0.4em;
+
+  background: rgba(23, 23, 23, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: 25px;
+
+  transition: 0.4s ease-in-out;
+
+  width: 400px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.4),
+    0 0 40px rgba(37,99,235,0.15);
+}
+
+.form:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 60px rgba(6,182,212,0.25);
+}
+
+#heading {
+
+  text-align: center;
+
+  margin: 1.5em 0;
+
+  color: white;
+
+  font-size: 1.4rem;
+
+  font-weight: 600;
+}
+
+.field {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75em;
+
+  border-radius: 25px;
+
+  padding: 0.9em;
+
+  border: none;
+
+  outline: none;
+
+  color: white;
+
+  background-color: #171717;
+
+  box-shadow:
+    inset 2px 5px 10px rgb(5, 5, 5);
+
+  position: relative;
+}
+
+.field:focus-within {
+
+  border: 1px solid #06B6D4;
+
+  box-shadow:
+    inset 2px 5px 10px rgb(5,5,5),
+    0 0 15px rgba(6,182,212,.3);
+}
+
+.input-icon {
+
+  color: white;
+
+  font-size: 16px;
+
+  min-width: 20px;
+}
+
+.input-field {
+
+  background: none;
+
+  border: none;
+
+  outline: none;
+
+  width: 100%;
+
+  color: #d3d3d3;
+
+  font-size: 15px;
+}
+
+.input-field::placeholder {
+
+  color: #94A3B8;
+}
+
+
+/* =====================================
+   PASSWORD TOGGLE
+===================================== */
+
+.toggle-password {
+
+  cursor: pointer;
+
+  color: #94A3B8;
+
+  transition: 0.3s;
+}
+
+.toggle-password:hover {
+
+  color: #06B6D4;
+}
+
+
+/* =====================================
+   BUTTON AREA
+===================================== */
+
+.form .btn {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 2em;
+}
+
+.button2 {
+
+  width: 100%;
+
+  padding: 0.9rem;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+
+  background: linear-gradient(
+    135deg,
+    #2563EB,
+    #06B6D4
+  );
+}
+
+.button2:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(37,99,235,.35);
+}
+
+.button2:active {
+
+  transform: scale(.98);
+}
+
+
+/* =====================================
+   SECURE LOGIN CARD
+===================================== */
+
+.user-profile {
+
+  width: 170px;
+
+  height: 55px;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  background: linear-gradient(
+    to bottom right,
+    #2e8eff 0%,
+    rgba(46, 142, 255, 0) 30%
+  );
+
+  background-color: rgba(46, 142, 255, 0.2);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.user-profile:hover {
+
+  background-color: rgba(46,142,255,0.6);
+
+  box-shadow: 0 0 20px rgba(46,142,255,.5);
+}
+
+.user-profile-inner {
+
+  width: 164px;
+
+  height: 49px;
+
+  border-radius: 13px;
+
+  background-color: #111827;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  color: white;
+
+  font-weight: 600;
+}
+
+.user-profile-inner i {
+
+  font-size: 20px;
+}
+
+
+/* =====================================
+   LOADING BUTTON
+===================================== */
+
+.button-loading {
+
+  pointer-events: none;
+
+  opacity: .8;
+}
+
+.button-loading::after {
+
+  content: "";
+
+  width: 16px;
+
+  height: 16px;
+
+  margin-left: 10px;
+
+  border: 2px solid rgba(255,255,255,.3);
+
+  border-top-color: white;
+
+  border-radius: 50%;
+
+  display: inline-block;
+
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+
+  to {
+
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+  .form{
+
+    width: 100%;
+
+    max-width: 360px;
+  }
+
+  .remember{
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .user-profile{
+
+    width: 100%;
+  }
+
+  .user-profile-inner{
+
+    width: calc(100% - 8px);
+  }
+
+  footer{
+
+    position: relative;
+
+    margin-top: 30px;
+  }
+}

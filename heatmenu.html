@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat Map - CrowdSense AI</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="heatmenu.css">
+</head>
+<body style="margin: 0; padding: 0; background: #0a0f1a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <!-- Heat Map Container -->
+    <div class="heatmap-container">
+        <div class="heatmap-header">
+            <h2>Thermographic Heat Map</h2>
+            <div class="heatmap-controls">
+                <button id="realtimeToggle" class="control-btn active">
+                    <i class="fa-solid fa-circle"></i> <span>Real-time</span>
+                </button>
+                <button id="zoomIn" class="control-btn">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> <span>Zoom In</span>
+                </button>
+                <button id="zoomOut" class="control-btn">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i> <span>Zoom Out</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Canvas for Heat Map -->
+        <canvas id="heatmapCanvas" width="800" height="600"></canvas>
+        
+        <!-- Legend -->
+        <div class="heatmap-legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #0000ff;"></div>
+                <span>Low (0-25%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ff00;"></div>
+                <span>Medium (25-50%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffff00;"></div>
+                <span>High (50-75%)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff0000;"></div>
+                <span>Critical (75-100%)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="heatmenu.js"></script>
+</body>
+</html>

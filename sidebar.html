@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense AI Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="../Profile/Profile.css">
+</head>
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fa-solid fa-brain"></i>
+            <span>CrowdSense AI</span>
+        </div>
+
+        <!-- Navigation -->
+        <ul class="menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Main Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../sections/sections.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Sections View</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-video"></i>
+                    <span>CCTV Feed</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Locations</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Alerts</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- Logout -->
+        <div class="logout">
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- ================= Main ================= -->
+
+    <div class="main-content">
+
+        <!-- Navbar -->
+
+        <nav class="navbar">
+
+            <div class="nav-left">
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class="nav-center">
+
+                <!-- Search -->
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+
+                <!-- Notification -->
+
+                <a href="../sections/sections.html" class="nav-btn" title="Sections View">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                </a>
+
+                <a href="dashboard.html" class="nav-btn" title="Main Dashboard">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </a>
+
+                <!-- Theme -->
+
+                <button class="icon-btn" title="Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <!-- Profile -->
+
+                <div class="profile">
+
+                    <a class="profile-btn" id="profileBtn" href="../Profile/ProfileDetails.html">
+                        <img src="https://i.pravatar.cc/50?img=12" alt="profile">
+                        <div class="profile-text"><h4>Admin</h4><p>Administrator</p></div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+
+                    <div class="profile-menu" id="profileMenu">
+                        <div class="profile-header">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="profile">
+                            <h3>Admin</h3>
+                            <p>Administrator</p>
+                        </div>
+                        <hr>
+                        <a class="menu-item" href="../Profile/ProfileDetails.html"><i class="fa-solid fa-user"></i>My Profile</a>
+                        <button class="menu-item"><i class="fa-solid fa-gear"></i>Settings</button>
+                        <hr>
+                        <button class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!-- Dashboard Content -->
+
+        <div class="content">
+
+            <a href="dashboard.html" class="page-switcher">Open Main Dashboard</a>
+            <a href="../sections/sections.html" class="page-switcher">Open Sections View</a>
+            <h1>Welcome to CrowdSense AI</h1>
+            <p>Real-time crowd monitoring dashboard.</p>
+
+        </div>
+
+    </div>
+
+    <script>
+        if (localStorage.getItem("crowdsenseLoggedIn") !== "true") {
+            window.location.replace("../login/index.html.html");
+        }
+
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                localStorage.removeItem("crowdsenseLoggedIn");
+                window.location.href = "../login/index.html.html";
+            });
+        }
+    </script>
+
+    <script src="../Profile/Profile.js"></script>
+
+</body>
+</html>

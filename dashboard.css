@@ -1,0 +1,371 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:#fff;
+    display:flex;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#171717;
+    position:fixed;
+    left:0;
+    top:0;
+    border-right:1px solid rgba(255,255,255,.05);
+    padding:25px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#2e8eff;
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    font-size:22px;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin:15px 0;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#ddd;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.menu a:hover,
+.menu .active a{
+    background:linear-gradient(to bottom right,
+    #2e8eff 0%,
+    rgba(46,142,255,.1) 80%);
+    box-shadow:0 0 15px rgba(46,142,255,.3);
+    color:#fff;
+}
+
+/* ================= Main ================= */
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:30px;
+}
+
+/* ================= Header ================= */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.search-box{
+    width:340px;
+    background:#171717;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    padding:14px 18px;
+    box-shadow:inset 2px 5px 10px rgb(5,5,5);
+}
+
+.search-box i{
+    color:#2e8eff;
+}
+
+.search-box input{
+    width:100%;
+    margin-left:10px;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+}
+
+.top-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.notification{
+    position:relative;
+    width:50px;
+    height:50px;
+    border-radius:18px;
+    background:#171717;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.notification:hover{
+    background:#2e8eff;
+    box-shadow:0 0 15px rgba(46,142,255,.5);
+}
+
+.notification span{
+    position:absolute;
+    top:8px;
+    right:8px;
+    width:18px;
+    height:18px;
+    background:red;
+    border-radius:50%;
+    font-size:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ================= Profile ================= */
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:linear-gradient(
+    to bottom right,
+    #2e8eff 0%,
+    rgba(46,142,255,0) 30%);
+    background-color:rgba(46,142,255,.2);
+    padding:8px 15px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.profile:hover{
+    box-shadow:0 0 15px rgba(46,142,255,.5);
+}
+
+.profile img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+/* ================= Cards ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#171717;
+    border-radius:25px;
+    padding:25px;
+    transition:.4s;
+    box-shadow:inset 2px 5px 10px rgb(5,5,5);
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(46,142,255,.35);
+}
+
+.card i{
+    font-size:30px;
+    color:#2e8eff;
+    margin-bottom:20px;
+}
+
+.card h1{
+    font-size:38px;
+    margin:15px 0;
+}
+
+.card p{
+    color:#aaa;
+}
+
+.danger i{
+    color:#ff4d4d;
+}
+
+/* ================= Middle ================= */
+
+.middle{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-top:30px;
+}
+
+.chart-box,
+.prediction{
+    background:#171717;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:inset 2px 5px 10px rgb(5,5,5);
+    transition:.4s;
+}
+
+.chart-box:hover,
+.prediction:hover{
+    transform:scale(1.02);
+    box-shadow:0 0 20px rgba(46,142,255,.35);
+}
+
+.prediction .zone{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+}
+
+.prediction button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    background:#2e8eff;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.prediction button:hover{
+    box-shadow:0 0 15px rgba(46,142,255,.6);
+}
+
+/* ================= Cameras ================= */
+
+.camera-section{
+    margin-top:35px;
+}
+
+.camera-grid{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.camera{
+    background:#171717;
+    border-radius:25px;
+    height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    transition:.4s;
+    box-shadow:inset 2px 5px 10px rgb(5,5,5);
+}
+
+.camera:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(46,142,255,.35);
+}
+
+.camera i{
+    font-size:55px;
+    color:#2e8eff;
+}
+
+.live{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:red;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* ================= Alerts ================= */
+
+.alerts{
+    margin-top:35px;
+    background:#171717;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:inset 2px 5px 10px rgb(5,5,5);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:left;
+}
+
+tr{
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+th{
+    color:#2e8eff;
+}
+
+.safe{
+    color:#00ff84;
+}
+
+.warning{
+    color:#ffc107;
+}
+
+.critical{
+    color:#ff4d4d;
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:900px){
+
+.sidebar{
+    width:80px;
+}
+
+.logo h2,
+.menu a span{
+    display:none;
+}
+
+.main{
+    margin-left:80px;
+    width:calc(100% - 80px);
+}
+
+.middle{
+    grid-template-columns:1fr;
+}
+
+}

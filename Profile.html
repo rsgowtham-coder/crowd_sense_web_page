@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrowdSense AI - Navbar Dropdowns</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="Profile.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <h2>CrowdSense AI</h2>
+        </div>
+
+        <div class="nav-right">
+
+            <!-- ================= NOTIFICATION ================= -->
+
+            <div class="notification">
+
+                <button class="icon-btn" id="notificationBtn">
+                    <span class="badge">3</span>
+                </button>
+
+                <div class="notification-menu" id="notificationMenu">
+
+                    <div class="menu-header">
+                        <h3>Notifications</h3>
+                    </div>
+
+                    <div class="notification-item danger">
+                        <div class="icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div class="content">
+                            <h4>High Crowd Alert</h4>
+                            <p>Gate A crowd density exceeded 90%</p>
+                            <span>2 mins ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notification-item warning">
+                        <div class="icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div class="content">
+                            <h4>AI Recommendation</h4>
+                            <p>Open Exit Gate B immediately.</p>
+                            <span>5 mins ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notification-item info">
+                        <div class="icon">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+
+                        <div class="content">
+                            <h4>Camera Offline</h4>
+                            <p>Camera 05 disconnected.</p>
+                            <span>12 mins ago</span>
+                        </div>
+                    </div>
+
+                    <div class="notification-item success">
+                        <div class="icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="content">
+                            <h4>Crowd Normal</h4>
+                            <p>Zone C crowd returned to normal.</p>
+                            <span>20 mins ago</span>
+                        </div>
+                    </div>
+
+                    <button class="view-all">
+                        View All Notifications
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ================= PROFILE ================= -->
+
+            <div class="profile">
+
+                <a class="profile-btn" id="profileBtn" href="ProfileDetails.html">
+
+                    <img src="https://i.pravatar.cc/50?img=12"
+                        alt="profile">
+
+                    <div class="profile-text">
+                        <h4>Guru Mithran</h4>
+                        <p>Frontend Developer</p>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </a>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <div class="profile-header">
+
+                        <img src="https://i.pravatar.cc/100?img=12"
+                            alt="profile">
+
+                        <h3>Guru Mithran</h3>
+                        <p>Frontend Developer</p>
+
+                    </div>
+
+                    <hr>
+
+                    <a class="menu-item" href="ProfileDetails.html">
+                        <i class="fa-solid fa-user"></i>
+                        My Profile
+                    </a>
+
+                    <button class="menu-item">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </button>
+
+                    <button class="menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Activity Log
+                    </button>
+
+                    <button class="menu-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy
+                    </button>
+
+                    <button class="menu-item">
+                        <i class="fa-solid fa-moon"></i>
+                        Dark Mode
+                    </button>
+
+                    <hr>
+
+                    <button class="menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <script src="Profile.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My Profile — CrowdSense AI</title>
+    <link rel="stylesheet" href="ProfileDetails.css">
+    <link rel="stylesheet" href="Profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><h2>CrowdSense AI</h2></div>
+    </nav>
+
+    <main style="padding:32px; max-width:900px; margin:0 auto;">
+        <section class="profile-card">
+            <img src="https://i.pravatar.cc/150?img=12" alt="profile">
+            <div class="info">
+                <h1>Guru Mithran</h1>
+                <p class="role">Frontend Developer</p>
+                <p class="bio">I'm a frontend developer specializing in user interfaces for realtime monitoring dashboards. I build responsive, accessible components and integrate UI with backend APIs.</p>
+
+                <div class="details">
+                    <div><strong>Email</strong><span>guru.mithran@example.com</span></div>
+                    <div><strong>Phone</strong><span>+1 555-123-4567</span></div>
+                    <div><strong>Location</strong><span>Chennai, India</span></div>
+                </div>
+
+                <div class="actions">
+                    <a class="button" id="backBtn" href="dashboard.html">Back to Dashboard</a>
+                    <button class="button outline" id="editBtn">Edit Profile</button>
+                </div>
+                <form id="editForm" style="display:none;margin-top:16px;gap:12px;" class="edit-form">
+                    <input type="text" id="inputName" placeholder="Full name">
+                    <input type="text" id="inputRole" placeholder="Role">
+                    <input type="email" id="inputEmail" placeholder="Email">
+                    <input type="text" id="inputPhone" placeholder="Phone">
+                    <input type="text" id="inputLocation" placeholder="Location">
+                    <textarea id="inputBio" placeholder="Short bio"></textarea>
+                    <div style="display:flex;gap:8px;margin-top:8px;">
+                        <button id="saveBtn" class="button" type="button">Save</button>
+                        <button id="cancelBtn" class="button outline" type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="Profile.js"></script>
+    <script>
+        (function(){
+            const editBtn=document.getElementById('editBtn');
+            const editForm=document.getElementById('editForm');
+            const saveBtn=document.getElementById('saveBtn');
+            const cancelBtn=document.getElementById('cancelBtn');
+
+            const inputName=document.getElementById('inputName');
+            const inputRole=document.getElementById('inputRole');
+            const inputEmail=document.getElementById('inputEmail');
+            const inputPhone=document.getElementById('inputPhone');
+            const inputLocation=document.getElementById('inputLocation');
+            const inputBio=document.getElementById('inputBio');
+
+            const nameEl=document.querySelector('.profile-card .info h1');
+            const roleEl=document.querySelector('.profile-card .info .role');
+            const bioEl=document.querySelector('.profile-card .info .bio');
+            const detailsDiv=document.querySelector('.details');
+
+            const STORAGE_KEY='crowdsense_profile_v1';
+
+            function load(){
+                const raw=localStorage.getItem(STORAGE_KEY);
+                if(!raw) return;
+                try{const data=JSON.parse(raw);
+                    if(data.name) nameEl.textContent=data.name;
+                    if(data.role) roleEl.textContent=data.role;
+                    if(data.bio) bioEl.textContent=data.bio;
+                    // populate details
+                    detailsDiv.innerHTML = `
+                        <div><strong>Email</strong><span>${data.email||''}</span></div>
+                        <div><strong>Phone</strong><span>${data.phone||''}</span></div>
+                        <div><strong>Location</strong><span>${data.location||''}</span></div>
+                    `;
+                }catch(e){console.error(e)}
+            }
+
+            function openEdit(){
+                // populate inputs from current view
+                inputName.value = nameEl.textContent || '';
+                inputRole.value = roleEl.textContent || '';
+                inputBio.value = bioEl.textContent || '';
+                const spans = detailsDiv.querySelectorAll('span');
+                inputEmail.value = spans[0] ? spans[0].textContent : '';
+                inputPhone.value = spans[1] ? spans[1].textContent : '';
+                inputLocation.value = spans[2] ? spans[2].textContent : '';
+                editForm.style.display='flex';
+                editForm.style.flexDirection='column';
+                editBtn.disabled=true;
+            }
+
+            function closeEdit(){
+                editForm.style.display='none';
+                editBtn.disabled=false;
+            }
+
+            saveBtn.addEventListener('click', function(){
+                const data={
+                    name: inputName.value.trim(),
+                    role: inputRole.value.trim(),
+                    email: inputEmail.value.trim(),
+                    phone: inputPhone.value.trim(),
+                    location: inputLocation.value.trim(),
+                    bio: inputBio.value.trim()
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                load();
+                closeEdit();
+                alert('Profile saved locally.');
+            });
+
+            cancelBtn.addEventListener('click', function(){ closeEdit(); });
+
+            editBtn.addEventListener('click', function(e){ e.preventDefault(); openEdit(); });
+
+            // initial load
+            load();
+        })();
+    </script>
+</body>
+</html>

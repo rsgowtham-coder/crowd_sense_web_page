@@ -1,0 +1,233 @@
+/* ===============================
+   CrowdSense AI - Live Camera, Alerts,
+   Analytics & Settings
+=================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    padding:30px;
+}
+
+.dashboard-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+/* ===============================
+   Cards
+=================================*/
+
+.card{
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    transition:.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 20px rgba(37,99,235,.4);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.card-header h2{
+    font-size:22px;
+    color:#f8fafc;
+}
+
+/* ===============================
+   Live Camera
+=================================*/
+
+.camera-box{
+    width:100%;
+    height:250px;
+    border-radius:15px;
+    overflow:hidden;
+    border:2px solid #2563eb;
+    background:#111827;
+}
+
+.camera-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.camera-info{
+    margin-top:18px;
+}
+
+.camera-info p{
+    margin-bottom:10px;
+    color:#cbd5e1;
+}
+
+.status{
+    font-size:14px;
+    font-weight:600;
+}
+
+.online{
+    color:#22c55e;
+}
+
+/* ===============================
+   Alerts
+=================================*/
+
+.alert-list{
+    list-style:none;
+}
+
+.alert-list li{
+    margin-bottom:15px;
+    padding:14px;
+    border-radius:10px;
+    font-weight:500;
+}
+
+.danger{
+    background:#7f1d1d;
+    color:#fecaca;
+}
+
+.warning{
+    background:#78350f;
+    color:#fde68a;
+}
+
+.info{
+    background:#1e3a8a;
+    color:#bfdbfe;
+}
+
+.success{
+    background:#14532d;
+    color:#bbf7d0;
+}
+
+/* ===============================
+   Analytics
+=================================*/
+
+.analytics-data{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.item{
+    background:#111827;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+}
+
+.item:hover{
+    background:#2563eb;
+}
+
+.item h3{
+    font-size:32px;
+    color:#38bdf8;
+    margin-bottom:8px;
+}
+
+.item:hover h3,
+.item:hover p{
+    color:#fff;
+}
+
+.item p{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+/* ===============================
+   Settings
+=================================*/
+
+.settings form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.settings label{
+    color:#e2e8f0;
+    font-size:15px;
+}
+
+.settings input[type="checkbox"]{
+    margin-right:10px;
+    transform:scale(1.2);
+    accent-color:#2563eb;
+}
+
+.settings select{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#111827;
+    color:#fff;
+    outline:none;
+}
+
+.settings button{
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.settings button:hover{
+    background:#1d4ed8;
+}
+
+/* ===============================
+   Responsive
+=================================*/
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .dashboard-container{
+        grid-template-columns:1fr;
+    }
+
+    .analytics-data{
+        grid-template-columns:1fr;
+    }
+
+    .camera-box{
+        height:220px;
+    }
+
+}

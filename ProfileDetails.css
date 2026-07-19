@@ -1,0 +1,25 @@
+body{background:#0F172A;color:#F8FAFC;font-family:'Poppins',sans-serif}
+.profile-card{display:flex;gap:28px;align-items:center;background:rgba(30,41,59,.9);padding:28px;border-radius:16px;border:1px solid rgba(255,255,255,.05);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+.profile-card img{width:150px;height:150px;border-radius:12px;border:3px solid #06B6D4;object-fit:cover}
+.profile-card .info h1{margin:0 0 6px;font-size:26px}
+.profile-card .info .role{color:#94A3B8;margin-bottom:12px}
+.profile-card .info .bio{color:#CBD5E1;line-height:1.5;margin-bottom:12px;max-width:540px}
+.details{display:flex;gap:18px;margin:14px 0}
+.details div{min-width:150px}
+.details strong{display:block;color:#F8FAFC}
+.details span{color:#94A3B8}
+.actions{display:flex;gap:12px;margin-top:18px}
+.button{background:#2563EB;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.button.outline{background:transparent;border:1px solid rgba(255,255,255,.06)}
+
+.edit-form input,
+.edit-form textarea{
+	background:rgba(255,255,255,0.03);
+	border:1px solid rgba(255,255,255,0.06);
+	color:#F8FAFC;
+	padding:10px 12px;
+	border-radius:8px;
+	outline:none;
+}
+.edit-form textarea{min-height:80px}
+

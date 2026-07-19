@@ -4,7 +4,7 @@
 // ===============================
 
 if (localStorage.getItem("crowdsenseLoggedIn") !== "true") {
-    window.location.replace("../login/index.html.html");
+    window.location.replace("index.html");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutLink.addEventListener("click", (e) => {
             e.preventDefault();
             localStorage.removeItem("crowdsenseLoggedIn");
-            window.location.href = "../login/index.html.html";
+            window.location.href = "index.html";
         });
     }
 
